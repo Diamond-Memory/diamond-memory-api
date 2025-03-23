@@ -1,6 +1,0 @@
-@DIAMOND_MEMORY.Api_HostAddress = http://localhost:5050
-
-GET {{DIAMOND_MEMORY.Api_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
