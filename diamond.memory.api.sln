@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "diamond.memory.Api", "diamo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "diamond.memory.Domain", "diamond.memory.Domain\diamond.memory.Domain.csproj", "{06219E77-CB7A-4275-8738-524BDC0282E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "diamond.memory.Data", "diamond.memory.Data\diamond.memory.Data.csproj", "{8D6FE79A-B9B5-47CC-9095-F09EC6691868}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{06219E77-CB7A-4275-8738-524BDC0282E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06219E77-CB7A-4275-8738-524BDC0282E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06219E77-CB7A-4275-8738-524BDC0282E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D6FE79A-B9B5-47CC-9095-F09EC6691868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D6FE79A-B9B5-47CC-9095-F09EC6691868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D6FE79A-B9B5-47CC-9095-F09EC6691868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D6FE79A-B9B5-47CC-9095-F09EC6691868}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
