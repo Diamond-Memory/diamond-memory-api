@@ -1,23 +1,36 @@
 using Microsoft.AspNetCore.Mvc;
 using diamond.memory.Domain.Catalog;
-using Microsoft.AspNetCore.Http.Internal;
+using diamond.memory.Data;
+
 
 namespace diamond.memory.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/catalog")]
     public class CatalogController : ControllerBase
     {
+        private readonly StoreContext _db;
+
+        public CatalogController(StoreContext db)
+        {
+            _db = db;
+        }
+
         [HttpGet]
 
         public IActionResult GetItems()
         {
-            var items = new List<Item>(){
-                new Item("Shirt", "Ohio State Shirt", "Nike", 29.99m),
-                new Item("Shorts", "Ohio State Pants", "Adidas", 44.99m),
-            };
-            return Ok(items);
+            return Ok(_db.Items);
         }
+
+        // public IActionResult GetItems()
+        // {
+        //     var items = new List<Item>(){
+        //         new Item("Shirt", "Ohio State Shirt", "Nike", 29.99m),
+        //         new Item("Shorts", "Ohio State Pants", "Adidas", 44.99m),
+        //     };
+        //     return Ok(items);
+        // }
 
         [HttpGet("{id:int}")]
         public IActionResult GetItem(int id)
