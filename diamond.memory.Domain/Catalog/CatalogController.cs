@@ -66,9 +66,19 @@ namespace diamond.memory.Api.Controllers
         }
 
                 [HttpPut("{id:int}")]
-        public IActionResult Put(int id, Item item)
+        public IActionResult PutItem(int id, [FromBody] Item item)
         {
-            return NoContent();
+            //_db.Set<Item>().AsNoTracking();
+            if(id != item.Id){
+                return BadRequest();
+            }
+            if(_db.Items.Find(id) == null){
+                return NotFound();
+            }
+            _db.Entry(item).State = EntityState.Modified;
+            _db.SaveChanges();
+            return Ok(item);
+            //return NoContent();
         }
         [HttpDelete("{id:int}")]
         public IActionResult Delete(int id)
