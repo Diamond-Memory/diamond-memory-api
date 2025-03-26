@@ -81,9 +81,17 @@ namespace diamond.memory.Api.Controllers
             //return NoContent();
         }
         [HttpDelete("{id:int}")]
-        public IActionResult Delete(int id)
+        public IActionResult DeleteItem(int id)
         {
-            return NoContent();
+            var item = _db.Items.Find(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            _db.Items.Removed(item);
+            _db.SaveChanges();
+            return Ok();
+            //return NoContent();
         }
     }
 
