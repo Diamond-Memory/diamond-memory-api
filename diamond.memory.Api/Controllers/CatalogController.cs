@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using diamond.memory.Domain.Catalog;
 using diamond.memory.Data;
+using diamond.memory.Domain.Orders;
 
 
 namespace diamond.memory.Api.Controllers
@@ -22,15 +23,6 @@ namespace diamond.memory.Api.Controllers
         {
             return Ok(_db.Items);
         }
-
-        // public IActionResult GetItems()
-        // {
-        //     var items = new List<Item>(){
-        //         new Item("Shirt", "Ohio State Shirt", "Nike", 29.99m),
-        //         new Item("Shorts", "Ohio State Pants", "Adidas", 44.99m),
-        //     };
-        //     return Ok(items);
-        // }
 
         [HttpGet("{id:int}")]
         public IActionResult GetItem(int id)
@@ -68,7 +60,7 @@ namespace diamond.memory.Api.Controllers
                 [HttpPut("{id:int}")]
         public IActionResult PutItem(int id, [FromBody] Item item)
         {
-            //_db.Set<Item>().AsNoTracking();
+            
             if(id != item.Id){
                 return BadRequest();
             }
@@ -78,7 +70,7 @@ namespace diamond.memory.Api.Controllers
             _db.Entry(item).State = EntityState.Modified;
             _db.SaveChanges();
             return Ok(item);
-            //return NoContent();
+           
         }
         [HttpDelete("{id:int}")]
         public IActionResult DeleteItem(int id)
@@ -91,7 +83,7 @@ namespace diamond.memory.Api.Controllers
             _db.Items.Removed(item);
             _db.SaveChanges();
             return Ok();
-            //return NoContent();
+           
         }
     }
 

@@ -1,5 +1,4 @@
-﻿using diamond.memory.Domain.Catalog;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace diamond.memory.Data
 {
@@ -8,6 +7,7 @@ namespace diamond.memory.Data
         public StoreContext(DbContextOptions<StoreContext> options) : base(options){ }
 
         public DbSet<Item> Items { get; set; } 
+        public DbSet<Order> Orders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
             {

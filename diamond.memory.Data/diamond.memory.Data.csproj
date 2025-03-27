@@ -1,12 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <ItemGroup>
-    <ProjectReference Include="..\diamond.memory.Domain\diamond.memory.Domain.csproj" />
-  </ItemGroup>
-
+ 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.0.0" />
   </ItemGroup>
+
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
