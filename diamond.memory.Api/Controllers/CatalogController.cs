@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using diamond.memory.Domain.Catalog;
 using diamond.memory.Data;
-using diamond.memory.Domain.Orders;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace diamond.memory.Api.Controllers
@@ -80,7 +80,7 @@ namespace diamond.memory.Api.Controllers
             {
                 return NotFound();
             }
-            _db.Items.Removed(item);
+            _db.Items.Remove(item);
             _db.SaveChanges();
             return Ok();
            
