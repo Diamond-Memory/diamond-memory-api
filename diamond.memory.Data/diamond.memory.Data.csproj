@@ -13,7 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Heroic.Verse.Domain\Heroic.Verse.Domain.csproj" />
+    <ProjectReference Include="..\diamond.memory.Domain\diamond.memory.Domain.csproj" />
   </ItemGroup>
 
 </Project>
