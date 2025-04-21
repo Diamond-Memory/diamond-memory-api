@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using diamond.memory.Domain.Catalog;
 using diamond.memory.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace diamond.memory.Api.Controllers
@@ -73,6 +74,7 @@ namespace diamond.memory.Api.Controllers
            
         }
         [HttpDelete("{id:int}")]
+        [Authorize("delete:catalog")]
         public IActionResult DeleteItem(int id)
         {
             var item = _db.Items.Find(id);
